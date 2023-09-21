@@ -20,7 +20,7 @@ public class Main {
 
     public static String calculateNextDay(String currentDate) {
         try {
-            DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+            DateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
             Date date = dateFormat.parse(currentDate);
 
             Calendar calendar = Calendar.getInstance();
@@ -32,7 +32,7 @@ public class Main {
             return nextDay;
         } catch (ParseException e) {
             e.printStackTrace();
-            return null;
+            return "Invalid date";
         }
     }
 }

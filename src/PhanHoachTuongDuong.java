@@ -5,41 +5,41 @@ class PhanHoachTuongDuong {
 
         @Test
         public void testValidNonEndOfMonthNonLeapYear() {
-            String inputDate = "2023-09-19";
-            String expectedNextDay = "2023-09-20";
+            String inputDate = "19-09-2023";
+            String expectedNextDay = "20-09-2023";
             String actualNextDay = Main.calculateNextDay(inputDate);
             assertEquals(expectedNextDay, actualNextDay);
         }
 
         @Test
         public void testValidNonEndOfMonthLeapYear() {
-            String inputDate = "2024-02-28";
-            String expectedNextDay = "2024-02-29";
+            String inputDate = "29-02-2024";
+            String expectedNextDay = "01-03-2024";
             String actualNextDay = Main.calculateNextDay(inputDate);
             assertEquals(expectedNextDay, actualNextDay);
         }
 
         @Test
         public void testValidEndOfMonthDecember() {
-            String inputDate = "2023-12-31";
-            String expectedNextDay = "2024-01-01";
+            String inputDate = "31-12-2023";
+            String expectedNextDay = "01-01-2024";
             String actualNextDay = Main.calculateNextDay(inputDate);
             assertEquals(expectedNextDay, actualNextDay);
         }
 
         @Test
         public void testInvalidEndOfMonth() {
-            String inputDate = "2023-02-28";
-            String expectedNextDay = "2023-03-01"; // Sửa lỗi, ngày tiếp theo của ngày cuối tháng 2 là ngày 1 tháng 3
+            String inputDate = "28-02-2023";
+            String expectedNextDay = "01-03-2023";
             String actualNextDay = Main.calculateNextDay(inputDate);
             assertEquals(expectedNextDay, actualNextDay);
         }
 
         @Test
         public void testInvalidDate() {
-            String inputDate = "2023-02-30";
+            String inputDate = "30-02-2023";
             String actualNextDay = Main.calculateNextDay(inputDate);
-            assertEquals(null, actualNextDay);
+            assertEquals("Invalid date", actualNextDay);
         }
 
 }
